@@ -1,0 +1,16 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "image": {
+      "dtype": "null",
+      "_type": "Value"
+    },
+    "caption": {
+      "dtype": "null",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

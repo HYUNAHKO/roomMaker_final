@@ -1,0 +1,34 @@
+0. Aanaconda 설치
+wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+chmod +x Anaconda3-2024.02-1-Linux-x86_64.sh
+./Anaconda3-2024.02-1-Linux-x86_64.sh
+
+nano ~/.bashrc 열어서
+마지막 줄에
+export PATH="/home/work/anaconda3/bin:$PATH"
+추가
+
+ctrl+0 & crtl+x 해서 Y 이후로 변경 사안 저장하기
+
+source ~/.bashrc
+으로 변경사항 저장
+
+1. 순서
+conda create -n myenv python=3.8
+
+conda activate myenv
+conda install python=3.10
+pip install chardet charset_normalizer
+pip install --upgrade requests huggingface_hub diffusers
+pip install numpy pandas matplotlib
+pip install transformers torch torchvision
+pip install opencv-python
+pip install accelerate
+pip install Pillow tqdm
+pip install diffusers
+conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch
+conda install importlib-metadata pillow
+
+2. 실행 
+python /home/work/roomMaker/reference/a_dataset_generator/get_empty_room/get_empty_room.py
+

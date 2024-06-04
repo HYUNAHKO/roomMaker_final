@@ -1,0 +1,14 @@
+# 240516 고현아 작성
+0. /home/work/roomMaker/reference/a_dataset_generator 이동
+0. chmod +x install.sh
+0-1. ./install.sh
+1. install.sh natten 설치 너무 느려서 --verbose로 과정 보는거 추가했고, apt-get 그냥 돌리면 안돼서 sudo로 실행시킴.
+2. cv2.dnn.DictValue 에러나서 아래 명령어로 opencv 버전 수정해줌.
+    pip install --upgrade opencv-python opencv-python-headless
+3. 혹시 몰라서 아래 것도 해줌.
+    pip install --upgrade transformers
+4. get_empty_room.py에서 수정 내역
+4.1. ~ 경로 안 읽혀서 읽기 수정함. // line 167
+4.2. line 73 보면, cuda에서 돌아갈 때는  input이 torch.FloatTensor이 아니라 torch.cuda.FloatTensor여야 해서, 변환하는 코드 추가함.
+4.3. unique_color을 뽑아낼 때, 기존 데이터셋과 좀 다른지 기존에 라벨링 되어 있지 않은 컬러가 포함되어 있어서 에러가 발생해서,
+line 15랑 line 108을 통해, 기존 작성자가 만들어둔 컬러 분류 딕셔너리 가져와서 기존에 라벨링되지 않은 컬러는 무시하고 분류 진행함.

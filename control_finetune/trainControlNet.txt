@@ -1,0 +1,19 @@
+accelerate launch train_controlnet.py \
+ --pretrained_model_name_or_path="stabilityai/stable-diffusion-2-inpainting" \
+ --output_dir="/home/work/roomMaker/controlNet_model" \
+ --dataset_name=HYUNAHKO/controlnetdataset\
+ --conditioning_image_column=segmentation_image \
+ --image_column=clean \
+ --caption_column=caption \
+ --resolution=512 \
+ --learning_rate=1e-5 \
+ --validation_image "/home/work/roomMaker/emptyroom.png" \
+ --validation_prompt "there is a sofa on the left side and TV infront of the room" \
+ --train_batch_size=4 \
+ --num_train_epochs=3 \
+ --tracker_project_name="controlnet" \
+ --enable_xformers_memory_efficient_attention \
+ --checkpointing_steps=5000 \
+ --validation_steps=5000 \
+ --report_to wandb \
+ --push_to_hub

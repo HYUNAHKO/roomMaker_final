@@ -1,0 +1,12 @@
+1. controlnet 훈련 순서
+conda deactivate
+conda remove --name myenv --all
+conda create -n myenv python=3.11
+conda activate myenv
+pip install diffusers transformers accelerate transformer_engine
+pip install transformers datasets pillow accelerate
+
+
+sudo find / -name libtransformer_engine.so 2>/dev/null
+sudo ln -s /usr/local/lib/python3.10/dist-packages/libtransformer_engine.so /home/work/anaconda3/envs/myenv/lib/python3.11/site-packages/libtransformer_engine.so
+ls -l /home/work/anaconda3/envs/myenv/lib/python3.11/site-packages/libtransformer_engine.so
